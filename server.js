@@ -8,6 +8,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
+const ejs = require('ejs');
 const expressLayouts = require('express-ejs-layouts');
 // const superagent = require('superagent');
 
@@ -21,30 +22,28 @@ app.use(bodyParser());
 app.use(express.static('./public'));
 app.use(expressLayouts);
 
-app.set('views', path.join(_dirname, 'views'));
+// app.set('views', path.join(_dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('/', function(request, response) {
-  response.render('index', {
-    foo: 'bar'
-  });
+app.get('/', (request, response) => {
+  response.render('index');
 });
 //require modules
 
 const client = require('./util/db');
 // const locationHandler = require('./modules/locations');
-const errorHandler = require('./modules/errors');
-const notFoundHandler = require('./modules/errors');
+// const errorHandler = require('./modules/errors');
+// const notFoundHandler = require('./modules/errors');
 
 
 // Add routes
-app.get('/hello', locationHandler);
+// app.get('/hello', locationHandler);
 
 
 // Has to happen after everything else
-app.use(notFoundHandler);
+// app.use(notFoundHandler);
 // Has to happen after the error might have occurred
-app.use(errorHandler); // Error Middleware
+// app.use(errorHandler); // Error Middleware
 
 //Make sure the server is listening for requests
 app.listen(3000,function() {

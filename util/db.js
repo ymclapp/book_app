@@ -3,9 +3,9 @@
 const pg = require('pg');
 
 //Database Connection Setup
-if (!process.env.DATABASE_URL) {
-  throw 'Missing DATBASE_URL';
-}
+// if (!process.env.DATABASE_URL) {
+//   throw 'Missing DATBASE_URL';
+// }
 
 const client = new pg.Client(process.env.DATABASE_URL);
 client.on('error', err => {throw err;});
