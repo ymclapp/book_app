@@ -5,7 +5,10 @@ require('dotenv').config();
 
 // Application Dependencies
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
+const expressLayouts = require('express-ejs-layouts');
 // const superagent = require('superagent');
 
 
@@ -14,13 +17,18 @@ const PORT = process.env.PORT;
 const app = express();
 
 app.use(cors()); // Middleware
-
-// app.get('/', (request, response) => {
-//   response.send('City Explorer Goes Here');
-// });
-
+app.use(bodyParser());
 app.use(express.static('./public'));
+app.use(expressLayouts);
 
+app.set('views', path.join(_dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.get('/', function(request, response) {
+  response.render('index', {
+    foo: 'bar'
+  });
+});
 //require modules
 
 const client = require('./util/db');
@@ -39,11 +47,7 @@ app.use(notFoundHandler);
 app.use(errorHandler); // Error Middleware
 
 //Make sure the server is listening for requests
-client.connect()
-  .then (() => {
-    console.log('PG Connected!');
-    app.listen(PORT, () => console.log(`App is listening on ${PORT}`));
-  })
-  .catch(err => {
-    throw `PG error!: ${err.message}`;
-  });
+app.listen(3000,function() {
+  console.log('heard on 3000');
+});
+
