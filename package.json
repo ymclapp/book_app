@@ -19,6 +19,7 @@
     "jest": "^25.2.7",
     "nodemon": "^2.0.4",
     "pg": "^8.2.1",
+    "serve-favicon": "^2.5.0",
     "superagent": "^5.2.2"
   },
   "devDependencies": {},

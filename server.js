@@ -10,6 +10,7 @@ const cors = require('cors');
 const path = require('path');
 const ejs = require('ejs');
 const expressLayouts = require('express-ejs-layouts');
+const favicon = require('serve-favicon');
 // const superagent = require('superagent');
 
 
@@ -21,6 +22,7 @@ app.use(cors()); // Middleware
 app.use(bodyParser());
 app.use(express.static('./public'));
 app.use(expressLayouts);
+app.use(favicon(__dirname + '/public/images/book_favicon.ico'));
 
 // app.set('views', path.join(_dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -28,6 +30,11 @@ app.set('view engine', 'ejs');
 app.get('/', (request, response) => {
   response.render('index');
 });
+
+app.get('/new', (request, response) =>  {
+  
+}
+)
 //require modules
 
 const client = require('./util/db');
