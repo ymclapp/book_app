@@ -5,13 +5,14 @@ require('dotenv').config();
 
 // Application Dependencies
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const ejs = require('ejs');
 const expressLayouts = require('express-ejs-layouts');
 const favicon = require('serve-favicon');
 // const superagent = require('superagent');
+const pg = require('pg');
 
 
 // Application Setup
@@ -19,25 +20,24 @@ const PORT = process.env.PORT;
 const app = express();
 
 app.use(cors()); // Middleware
-app.use(bodyParser());
+// app.use(bodyParser());
 app.use(express.static('./public'));
 app.use(expressLayouts);
-app.use(favicon(__dirname + '/public/images/book_favicon.ico'));
+app.use(favicon(__dirname + '/public/styles/book_favicon.ico'));
 
 // app.set('views', path.join(_dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', (request, response) => {
-  response.render('index');
-});
+  response.render('../pages/index');
+})
 
-app.get('/new', (request, response) =>  {
-  
-}
-)
+app.get('/new', (request, response) => {
+  response.render('../pages/searches/new');
+})
 //require modules
 
-const client = require('./util/db');
+// const client = require('./util/db');
 // const locationHandler = require('./modules/locations');
 // const errorHandler = require('./modules/errors');
 // const notFoundHandler = require('./modules/errors');
@@ -53,7 +53,5 @@ const client = require('./util/db');
 // app.use(errorHandler); // Error Middleware
 
 //Make sure the server is listening for requests
-app.listen(3000,function() {
-  console.log('heard on 3000');
-});
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 
