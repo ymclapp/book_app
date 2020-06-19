@@ -28,13 +28,25 @@ app.use(favicon(__dirname + '/public/styles/book_favicon.ico'));
 // app.set('views', path.join(_dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
+//Loading up EJS view files/pages
 app.get('/', (request, response) => {
-  response.render('../pages/index');
+  response.render('pages/index')
 })
 
 app.get('/new', (request, response) => {
-  response.render('../pages/searches/new');
+  response.render('pages/new')
 })
+
+app.get('/about', (request, response) => {
+  response.render('pages/about')
+})
+
+app.get('/error', (request, response) => {
+  response.render('pages/error');
+});
+
+
 //require modules
 
 // const client = require('./util/db');
@@ -53,5 +65,5 @@ app.get('/new', (request, response) => {
 // app.use(errorHandler); // Error Middleware
 
 //Make sure the server is listening for requests
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`http://localhost:${PORT} show me the money`));
 

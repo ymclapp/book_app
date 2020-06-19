@@ -11,13 +11,15 @@
         <fieldset>
             <legend>Search by either Title or Author</legend>
             <label>
-                <span>Title</span>
-                <input type = "text"  name = "title" />
+                <span>Search</span>
+                <input type = "text" name = "Enter a title or author" />"
+                <input type = "radio"  name = "search" value = "title"/>
+                <input type = "radio"  name = "search" value = "author"/>
             </label>
-            <label>
+            <!-- <label>
                 <span>Author</span>
                 <input type = "text"  name = "author" />
-            </label>
+            </label> -->
         </fieldset>
     </form>
 <header>
@@ -31,9 +33,7 @@
 
 </main>
 
-<footer>
-    <%-include("/partials/footer.ejs")%>
-</footer>
+
 
 </body>
 </html>
