@@ -1,0 +1,1 @@
+/* used to contain the rules of the primary colors, shapes, borders, shadows, and such. Mostly these are elements which repeat across a whole website. We don’t want to redefine them each time we create them. Instead we want to define a unique class which we only add on later to a default element. */

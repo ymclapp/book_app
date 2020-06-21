@@ -48,6 +48,7 @@ app.get('/error', (request, response) => {
 
 
 //require modules
+const booksHandler = require('..modules/books');
 
 // const client = require('./util/db');
 // const locationHandler = require('./modules/locations');
