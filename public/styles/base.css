@@ -4,3 +4,8 @@ body {
     background-color: lightgrey;
 }
 
+footer {
+    background-color: darkolivegreen;
+    font-weight: 400;
+    font-size: xx-large;
+}

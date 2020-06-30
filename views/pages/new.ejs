@@ -2,24 +2,32 @@
 <html lang="en">
 <head>
   <title>Books</title> 
-  <!-- <link rel="stylesheet" href="styles/styles.css"> -->
-  <link rel="stylesheet" href="/public/styles/layout.css"
-    <link rel="icon" type="image/x-icon" href="/public/images/book_favicon.png"> 
+  <link rel="icon" type="image/x-icon" href="/public/images/book_favicon.png"> 
+  
 </head>
 <body>
     <container id = "search-container">
     <h1>Search Here</h1>
     <form action = "/searches" method = "POST">
-              <label id = "search--label">
+      
+      <section class = "search--form">        
+      <label id = "search--label">
                 <span>Search:</span>
                 <input type = "text" name = "Enter a title or author" />
               </label>
-                
+            </section>   
+            
+            <section class = "title--form">   
               <label id = "title--label">Title</label>
                 <input type = "radio"  id = "book" name = "search" value = "Title"/>
+              </section>
+              
+              <section class = "author--form">
                 <label id = "author--label">Author</label>
                 <input type = "radio"  id = "author" name = "search" value = "Author"/>
-            <button>Search Google Books!!</button>
+              </section>
+               
+              <button class = "google--button">Search Google Books!!</button>
     </form>
 </body>
 </html>

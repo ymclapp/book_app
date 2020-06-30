@@ -1,6 +1,6 @@
 /* Modules - smaller bits of code that are reusable on the page, and they are part of a single layout. Might get broken up by page by that page's folder in the modules folder. You may notice that we are using two hyphens after the module prefix. The reason is that sometimes module names have two words or their own prefixes like big-article. We need to have two hyphens in order to tell what part of it is the child element—e.g. compare big-article-title to big-article--title and big-article--text.  Also, you can nest modules inside modules if a particular module takes a large portion of the page*/
 
-label {
+/* label {
     display: flex;
     padding: 10px;
 }
@@ -9,4 +9,5 @@ label select,
 label input {
     flex: 1;
     margin-left: 20px;
-}
+} */
+
