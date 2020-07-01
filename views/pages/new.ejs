@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  <%- include('../partials/head') %>
+  <%- include('../partials/header') %>
 <body>
-    <container id = "search-container">
-    <h1>Search Here</h1>
-    <form action = "/searches" method = "POST">
+    <!-- <container id = "search-container"> -->
+    <h1 style = "background-color: lemonchiffon;">Search Here</h1>
+    <form action = "/searches"   style = "background-color: dodgerblue;" method = "POST">
       
       <section class = "search--form">        
-      <label id = "search--label">
+        <label id = "search--label">
                 <span>Search:</span>
                 <input type = "text" name = "Enter a title or author" />
               </label>
-            </section>   
+      </section>   
             
-            <section class = "title--form">   
-              <label id = "title--label">Title</label>
-                <input type = "radio"  id = "book" name = "search" value = "Title"/>
-              </section>
+      <section class = "title--form">   
+        <label id = "title--label">Title</label>
+          <input type = "radio"  id = "book" name = "search" value = "Title"/>
+      </section>
               
-              <section class = "author--form">
-                <label id = "author--label">Author</label>
-                <input type = "radio"  id = "author" name = "search" value = "Author"/>
-              </section>
+      <section class = "author--form">
+        <label id = "author--label">Author</label>
+        <input type = "radio"  id = "author" name = "search" value = "Author"/>
+      </section>
                
               <button class = "google--button">Search Google Books!!</button>
     </form>
+
+    <%- include('../partials/footer') %>
+     
 </body>
 </html>

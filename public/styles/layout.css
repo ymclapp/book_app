@@ -9,12 +9,16 @@
     padding: 20;
 }
 
-.title--label {
+.title--form {
     background-color: darkmagenta;
     padding: 20;
 }
 
+.author--form {
+
+}
+
 .google--button {
-    background-color: darkslateblue;
+    background-color: rgb(228, 47, 213);
     padding: 20;
 }

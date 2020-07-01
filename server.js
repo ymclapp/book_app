@@ -21,9 +21,11 @@ const app = express();
 
 app.use(cors()); // Middleware
 // app.use(bodyParser());
-app.use(express.static('./public'));
+// app.use(express.static(__dirname + './public'));
 app.use(expressLayouts);
 // app.use(favicon(__dirname + '/public/styles/book_favicon.ico'));
+app.use('/public', express.static('public'));
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
