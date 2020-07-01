@@ -23,9 +23,9 @@ app.use(cors()); // Middleware
 // app.use(bodyParser());
 app.use(express.static('./public'));
 app.use(expressLayouts);
-app.use(favicon(__dirname + '/public/styles/book_favicon.ico'));
+// app.use(favicon(__dirname + '/public/styles/book_favicon.ico'));
 
-// app.set('views', path.join(_dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
