@@ -4,21 +4,45 @@
     background-color: blue;
 } */
 
-.author--label {
+/* .author--label {
     background-color: coral;
-    padding: 20;
-}
+    padding: 20px;    
+} */
 
 .title--form {
-    background-color: darkmagenta;
-    padding: 20;
+    background-color: lightgray;
+    padding: 50px;
+    margin: 20px;
 }
 
 .author--form {
-
+    background-color: lightgray;
+    padding: 50px;
+    border-style: solid;
+    border-color: red;
+    margin: 20px;
 }
 
 .google--button {
-    background-color: rgb(228, 47, 213);
-    padding: 20;
+    background-color: black;
+    padding: 20px;
+    color: white;
+    margin: 20 px;
+}
+
+.search--label {
+    background-color: whitesmoke;
+    padding: 100px;
+    margin: 20px;
+}
+
+.search--form {
+    background-color: thistle;
+    padding: 20px;
+    margin: 20px;
+}
+
+h1 {
+    color: white;
+    background-color: rgb(105,105,105)
 }

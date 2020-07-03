@@ -1,7 +1,7 @@
 /*  Base - should include default sizes, margins, colors, borders, and any other default values you plan to use across your website. Your typography and your form elements should have unified styles which appear on every page and give a feel and look that they are part of the same design and theme. */
 
 body {
-    background-color: lightgrey;
+    background-color:  rgb(169,169,169);
 }
 
 footer {

@@ -4,13 +4,12 @@
   <%- include('../partials/header') %>
 <body>
     <!-- <container id = "search-container"> -->
-    <h1 style = "background-color: lemonchiffon;">Search Here</h1>
-    <form action = "/searches"   style = "background-color: dodgerblue;" method = "POST">
+    <h1>Search by title or author</h1>
+    <form action = "/searches" method = "POST">
       
       <section class = "search--form">        
         <label id = "search--label">
-                <span>Search:</span>
-                <input type = "text" name = "Enter a title or author" />
+                <input type = "text" placeholder = "Enter a title or author" name = "search"/>
               </label>
       </section>   
             
@@ -24,7 +23,7 @@
         <input type = "radio"  id = "author" name = "search" value = "Author"/>
       </section>
                
-              <button class = "google--button">Search Google Books!!</button>
+              <button class = "google--button">Search the Google Books API</button>
     </form>
 
     <%- include('../partials/footer') %>
