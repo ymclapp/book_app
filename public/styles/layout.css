@@ -42,7 +42,15 @@
     margin: 20px;
 }
 
-h1 {
+/* h1 {
     color: white;
-    background-color: rgb(105,105,105)
+    background-color: rgb(105,105,105);
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+.page--title {
+    color: white;
+    background-color: rgb(105,105,105);
+    padding: 100 px;
+    margin: 20 px;
 }
