@@ -13,18 +13,21 @@ const expressLayouts = require('express-ejs-layouts');
 const favicon = require('serve-favicon');
 // const superagent = require('superagent');
 const pg = require('pg');
+const methodOverride = require('method-override');
 
 
 // Application Setup
 const PORT = process.env.PORT;
 const app = express();
 
-app.use(cors()); // Middleware
+// Middleware
+app.use(cors()); 
 // app.use(bodyParser());
 // app.use(express.static(__dirname + './public'));
 app.use(expressLayouts);
 // app.use(favicon(__dirname + '/public/styles/book_favicon.ico'));
 app.use('/public', express.static('public'));
+app.use(methodOverride('X-HTTP-Method-Override'));
 
 
 app.set('views', path.join(__dirname, 'views'));

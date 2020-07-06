@@ -1,9 +1,10 @@
 'use strict';
 
 const superagent = require('superagent');
-const client = require('../util/db');
+const client = require('../data/db');
 
 function booksHandler(request,response) {
+  console.log(request.body)
   const author = request.query.latitude;
   const title =  request.query.longitude;
   const url = 'https://www.googleapis.com/books/v1/volumes';
