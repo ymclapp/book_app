@@ -28,6 +28,7 @@ app.use(expressLayouts);
 // app.use(favicon(__dirname + '/public/styles/book_favicon.ico'));
 app.use('/public', express.static('public'));
 app.use(methodOverride('X-HTTP-Method-Override'));
+// app.use(express.urlencoded());
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -53,7 +54,9 @@ app.get('/error', (request, response) => {
 
 
 // //require modules
-const booksHandler = require('..modules/books');
+const booksHandler = require('./modules/books');
+
+app.post('/searches', booksHandler)
 
 // const client = require('./util/db');
 // const locationHandler = require('./modules/locations');
