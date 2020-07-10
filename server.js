@@ -5,7 +5,8 @@ require('dotenv').config();
 
 // Application Dependencies
 const express = require('express');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const router = express.router();
 const cors = require('cors');
 const path = require('path');
 const ejs = require('ejs');
@@ -22,13 +23,14 @@ const app = express();
 
 // Middleware
 app.use(cors()); 
-// app.use(bodyParser());
+app.use(bodyParser.urlextencoded({ extended: false}));
+app.use(bodyparser.json());
 // app.use(express.static(__dirname + './public'));
 app.use(expressLayouts);
 // app.use(favicon(__dirname + '/public/styles/book_favicon.ico'));
 app.use('/public', express.static('public'));
 app.use(methodOverride('X-HTTP-Method-Override'));
-// app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true}));
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -52,11 +54,19 @@ app.get('/error', (request, response) => {
   response.render('pages/error');
 });
 
+router.post('handle',(request,response) => {
+  //code to perform particular action.
+  //To access POST variable use req.body()methods.
+  // https://codeforgeek.com/handle-get-post-request-express-4/
+  console.log(request.body);
+});
+
+app.use("/", router);
 
 // //require modules
 const booksHandler = require('./modules/books');
 
-app.post('/searches', booksHandler)
+app.post('/show', booksHandler)
 
 // const client = require('./util/db');
 // const locationHandler = require('./modules/locations');
